@@ -2,12 +2,12 @@
 require_once '../App/Utils/Database/Database.php';
 require_once '../config/app.php';
 
+
 use SYRADEV\Utils\Database\PdoDb;
 
 // On se connecte à la base de données
 // On notera ici que la classe PdoDb possède un accès statique
 $conx = PdoDb::getInstance();
-
 
 // On sélectionne la liste des blogs
 $req_blog = 'SELECT `id`, `title`, `subtitle`, `description`, `logo` FROM `blog` ORDER BY `title` ASC';
@@ -24,6 +24,7 @@ foreach ($res_blog as $blog) {
         $current_blog_logo = $blog['logo'];
     }
 }
+
 ?>
 <div class="container">
     <div class="row">

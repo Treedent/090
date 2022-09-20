@@ -1,7 +1,6 @@
 <?php
 
 /* app.php */
-
 $conf = [
     'defaults' => [
 	    'home_url' => '/090/public/',
@@ -14,6 +13,3 @@ $conf = [
         'password'	=> 'PhpRoot@2022'
     ]
 ];
-
-
-
