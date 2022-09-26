@@ -1,6 +1,7 @@
 <?php
     require_once '../App/Models/Comment.php';
     use SYRADEV\App\Models\Comment;
+    global $conx, $conf;
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -51,9 +52,9 @@
     <div class="container bb-1">
         <div class="row mt-3">
             <div class="col">
-                <?= $current_blog_logo;?>
+                <?=$current_blog_logo;?>
                 <h1 class="d-inline-flex">
-                    Blog <?= $current_blog_title;?>
+                    Blog <?=$current_blog_title;?>
                 </h1>
             </div>
         </div>

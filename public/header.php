@@ -2,6 +2,8 @@
 require_once '../App/Utils/Database/Database.php';
 require_once '../config/app.php';
 
+global $conf;
+
 
 use SYRADEV\Utils\Database\PdoDb;
 
@@ -10,11 +12,11 @@ use SYRADEV\Utils\Database\PdoDb;
 $conx = PdoDb::getInstance();
 
 // On sélectionne la liste des blogs
-$req_blog = 'SELECT `id`, `title`, `subtitle`, `description`, `logo` FROM `blog` ORDER BY `title` ASC';
+$req_blog = 'SELECT `id`, `title`, `subtitle`, `description`, `logo` FROM `blog` ORDER BY `title`';
 $res_blog = $conx->requete($req_blog);
 
 session_start();
-$_SESSION['blogid'] = isset($_GET['blogid']) ? $_GET['blogid'] : $conf['defaults']['blog'];
+$_SESSION['blogid'] = $_GET['blogid'] ?? $conf['defaults']['blog'];
 $_SESSION['default_url'] = $conf['defaults']['home_url'];
 
 $current_blog_title = $current_blog_logo = '';
@@ -60,7 +62,7 @@ foreach ($res_blog as $blog) {
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">
-                                        &nbsp; <?= $current_blog_title; ?>
+                                        &nbsp;<?= $current_blog_title; ?>
                                     </a>
                                 </li>
                             </ul>
