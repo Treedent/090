@@ -46,16 +46,16 @@ if (isset($_POST['saveNewPost']) && empty($_POST['escobar'])) {
     // On valide les champs
     $FormErr = [];
     //Le champ title est obligatoire
-    if (!isset($title) || empty($title)) {
+    if (empty($title)) {
         array_push($FormErr, 'title');
     }
     //Le champ content est obligatoire
-    if (!isset($content) || empty($content)) {
+    if (empty($content)) {
         array_push($FormErr, 'content');
     }
 
     // Si le formulaire ne comporte pas d'erreur
-    if (sizeof($FormErr) === 0) {
+    if (count($FormErr) === 0) {
 
         // On enregistre le post
         $post = new Post($formPost);
@@ -76,10 +76,10 @@ if (isset($_POST['saveNewPost']) && empty($_POST['escobar'])) {
                 $res_tag_exists = $conx->requete($req_tag_exists, 'fetch');
 
                 // Si le tag existe on l'ajoute aux tags déjà existants à lier au post
-                if(is_array($res_tag_exists) && !empty($res_tag_exists)) {
+                $formPost['tags'] = [];
+                if (is_array($res_tag_exists) && !empty($res_tag_exists)) {
                     array_push($formPost['tags'], $res_tag_exists['id']);
-                }
-                // Si le tag n'existe pas on le créé et on récupère son nouvel id
+                } // Si le tag n'existe pas on le créé et on récupère son nouvel id
                 else {
                     $tag = new Tag($newTag);
                     $conx->inserer('tag', $tag);
@@ -88,16 +88,16 @@ if (isset($_POST['saveNewPost']) && empty($_POST['escobar'])) {
                     array_push($formPost['tags'], $tagid);
                 }
             }
-        }
 
-        // On assure l'unicité des tags à lier
-        $selectedTags = array_unique($formPost['tags']);
+            // On assure l'unicité des tags à lier
+            $selectedTags = array_unique($formPost['tags']);
 
-        // On enregistre les tags du post
-        foreach( $selectedTags as $selectedTag) {
-            $posttag_ar = ['idpost'=>(int)$postid, 'idtag'=>(int)$selectedTag];
-            $postTag = new PostTag($posttag_ar);
-            $conx->inserer('post_tag_mm', $postTag);
+            // On enregistre les tags du post
+            foreach ($selectedTags as $selectedTag) {
+                $posttag_ar = ['idpost' => (int)$postid, 'idtag' => (int)$selectedTag];
+                $postTag = new PostTag($posttag_ar);
+                $conx->inserer('post_tag_mm', $postTag);
+            }
         }
         // On redirige sur la page d'accueil avec le paramètre postinsert=$postid pour générer un affichage
         header('Location:' . $conf['defaults']['home_url'] . '?blogid=' . $_SESSION['blogid'] . '&postinsert=' . $postid);

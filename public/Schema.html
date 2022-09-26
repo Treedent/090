@@ -7,7 +7,6 @@
 <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
 <link rel='stylesheet' href="css/bootstrap.min.css">
 <style>
-@charset "UTF-8";
 body {
   color:#c2c2c2;
   background-color:#353637;
@@ -58,8 +57,8 @@ a {
 
 
 <a name='layout1'/><h4>Syradev Blog</h4>
-<object data='Syradev_blog/layout.svg' type='image/svg+xml'>
-    <embed src='Syradev_blog/layout.svg' type='image/svg+xml'/>
+<object data='imgs/layout.svg' type='image/svg+xml'>
+    <embed src='imgs/layout.svg' type='image/svg+xml'/>
 </object>
 
 </div>
@@ -68,14 +67,15 @@ a {
 <div class='card'><div class='card-body'>
 <h5 class='card-title'>Tables</h5>
 <ul>
-<li><a href='#syradev_blog.blog'/>syradev_blog.blog</a>
-<li><a href='#syradev_blog.comment'/>syradev_blog.comment</a>
-<li><a href='#syradev_blog.post'/>syradev_blog.post</a>
-<li><a href='#syradev_blog.post_tag_mm'/>syradev_blog.post_tag_mm</a>
-<li><a href='#syradev_blog.tag'/>syradev_blog.tag</a>
-<li><a href='#syradev_blog.user'/>syradev_blog.user</a></ul>
-</div></div><br><br><br>
-<div class='card'><div class='card-body'><a name='syradev_blog.blog'  onclick="window.scrollTo(424, 288);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.blog').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Schema syradev_blog</h5><h5 class='card-title'>Table blog</h5></a>
+	<li><a href="#syradev_blog.blog">syradev_blog.blog</a></li>
+	<li><a href="#syradev_blog.comment">syradev_blog.comment</a></li>
+	<li><a href="#syradev_blog.post">syradev_blog.post</a></li>
+	<li><a href="#syradev_blog.post_tag_mm">syradev_blog.post_tag_mm</a></li>
+	<li><a href="#syradev_blog.tag">syradev_blog.tag</a></li>
+	<li><a href="#syradev_blog.user">syradev_blog.user</a></li>
+</ul>
+</div></div><br /><br /><br />
+<div class='card'><div class='card-body'><a name='syradev_blog.blog'  onclick="window.scrollTo(424, 288);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.blog').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Schema syradev_blog</h5><h5 class='card-title'>Table blog</h5></a>
 <table class='table table-sm small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:40%'>Field Name</th><th>Data Type</th></tr>
@@ -113,15 +113,15 @@ a {
 <tr><th colspan='3'>Referring Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#ref'/></svg></td><td>post_ibfk_1</td>
-		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;">post</a>(blog&#95;id) </td>
+		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;">post</a>(blog&#95;id) </td>
 	</tr>
 <tr><th colspan='3'>Options</th></tr>
 <tr><td colspan='3'>ENGINE&#61;InnoDB AUTO&#95;INCREMENT&#61;3 DEFAULT CHARSET&#61;utf8mb4 COLLATE&#61;utf8mb4&#95;unicode&#95;ci</td></tr>
 </tbody>
 </table></div></div>
 
-<br><br>
-<div class='card'><div class='card-body'><a name='syradev_blog.comment'  onclick="window.scrollTo(136, 288);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.comment').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table comment</h5></a>
+<br /><br />
+<div class='card'><div class='card-body'><a name='syradev_blog.comment'  onclick="window.scrollTo(136, 288);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.comment').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table comment</h5></a>
 <table class='table table-sm small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:40%'>Field Name</th><th>Data Type</th></tr>
@@ -162,15 +162,15 @@ a {
 <tr><th colspan='3'>Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>comment_ibfk_1</td>
-		<td > (post&#95;id) &#8594; <a href='#syradev&#95;blog&#46;post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;">post</a>(id) </td>
+		<td > (post&#95;id) &#8594; <a href='#syradev&#95;blog&#46;post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;">post</a>(id) </td>
 	</tr>
 <tr><th colspan='3'>Options</th></tr>
 <tr><td colspan='3'>ENGINE&#61;InnoDB AUTO&#95;INCREMENT&#61;5 DEFAULT CHARSET&#61;utf8mb4 COLLATE&#61;utf8mb4&#95;unicode&#95;ci</td></tr>
 </tbody>
 </table></div></div>
 
-<br><br>
-<div class='card'><div class='card-body'><a name='syradev_blog.post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table post</h5></a>
+<br /><br />
+<div class='card'><div class='card-body'><a name='syradev_blog.post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table post</h5></a>
 <table class='table table-sm small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:40%'>Field Name</th><th>Data Type</th></tr>
@@ -219,28 +219,28 @@ a {
 <tr><th colspan='3'>Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>post_ibfk_1</td>
-		<td > (blog&#95;id) &#8594; <a href='#syradev&#95;blog&#46;blog'  onclick="window.scrollTo(424, 288);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.blog').classList.add('palpable'); return false;">blog</a>(id) </td>
+		<td > (blog&#95;id) &#8594; <a href='#syradev&#95;blog&#46;blog'  onclick="window.scrollTo(424, 288);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.blog').classList.add('palpable'); return false;">blog</a>(id) </td>
 	</tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>post_ibfk_2</td>
-		<td > (author) &#8594; <a href='#syradev&#95;blog&#46;user'  onclick="window.scrollTo(60, 64);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.user').classList.add('palpable'); return false;">user</a>(id) </td>
+		<td > (author) &#8594; <a href='#syradev&#95;blog&#46;user'  onclick="window.scrollTo(60, 64);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.user').classList.add('palpable'); return false;">user</a>(id) </td>
 	</tr>
 <tr><th colspan='3'>Referring Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#ref'/></svg></td><td>comment_ibfk_1</td>
-		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;comment'  onclick="window.scrollTo(136, 288);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.comment').classList.add('palpable'); return false;">comment</a>(post&#95;id) </td>
+		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;comment'  onclick="window.scrollTo(136, 288);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.comment').classList.add('palpable'); return false;">comment</a>(post&#95;id) </td>
 	</tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#ref'/></svg></td><td>post_tag_mm_ibfk_1</td>
-		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;post&#95;tag&#95;mm'  onclick="window.scrollTo(424, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.post_tag_mm').classList.add('palpable'); return false;">post&#95;tag&#95;mm</a>(id&#95;post) </td>
+		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;post&#95;tag&#95;mm'  onclick="window.scrollTo(424, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.post_tag_mm').classList.add('palpable'); return false;">post&#95;tag&#95;mm</a>(id&#95;post) </td>
 	</tr>
 <tr><th colspan='3'>Options</th></tr>
 <tr><td colspan='3'>ENGINE&#61;InnoDB AUTO&#95;INCREMENT&#61;4 DEFAULT CHARSET&#61;utf8mb4 COLLATE&#61;utf8mb4&#95;unicode&#95;ci</td></tr>
 </tbody>
 </table></div></div>
 
-<br><br>
-<div class='card'><div class='card-body'><a name='syradev_blog.post_tag_mm'  onclick="window.scrollTo(424, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.post_tag_mm').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table post_tag_mm</h5></a>
+<br /><br />
+<div class='card'><div class='card-body'><a name='syradev_blog.post_tag_mm'  onclick="window.scrollTo(424, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.post_tag_mm').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table post_tag_mm</h5></a>
 <table class='table table-sm small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:40%'>Field Name</th><th>Data Type</th></tr>
@@ -274,19 +274,19 @@ a {
 <tr><th colspan='3'>Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>post_tag_mm_ibfk_1</td>
-		<td > (id&#95;post) &#8594; <a href='#syradev&#95;blog&#46;post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;">post</a>(id) </td>
+		<td > (id&#95;post) &#8594; <a href='#syradev&#95;blog&#46;post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;">post</a>(id) </td>
 	</tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>post_tag_mm_ibfk_2</td>
-		<td > (id&#95;tag) &#8594; <a href='#syradev&#95;blog&#46;tag'  onclick="window.scrollTo(632, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.tag').classList.add('palpable'); return false;">tag</a>(id) </td>
+		<td > (id&#95;tag) &#8594; <a href='#syradev&#95;blog&#46;tag'  onclick="window.scrollTo(632, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.tag').classList.add('palpable'); return false;">tag</a>(id) </td>
 	</tr>
 <tr><th colspan='3'>Options</th></tr>
 <tr><td colspan='3'>ENGINE&#61;InnoDB AUTO&#95;INCREMENT&#61;9 DEFAULT CHARSET&#61;utf8mb4 COLLATE&#61;utf8mb4&#95;unicode&#95;ci</td></tr>
 </tbody>
 </table></div></div>
 
-<br><br>
-<div class='card'><div class='card-body'><a name='syradev_blog.tag'  onclick="window.scrollTo(632, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.tag').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table tag</h5></a>
+<br /><br />
+<div class='card'><div class='card-body'><a name='syradev_blog.tag'  onclick="window.scrollTo(632, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.tag').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table tag</h5></a>
 <table class='table table-sm small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:40%'>Field Name</th><th>Data Type</th></tr>
@@ -309,15 +309,15 @@ a {
 <tr><th colspan='3'>Referring Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#ref'/></svg></td><td>post_tag_mm_ibfk_2</td>
-		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;post&#95;tag&#95;mm'  onclick="window.scrollTo(424, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.post_tag_mm').classList.add('palpable'); return false;">post&#95;tag&#95;mm</a>(id&#95;tag) </td>
+		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;post&#95;tag&#95;mm'  onclick="window.scrollTo(424, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.post_tag_mm').classList.add('palpable'); return false;">post&#95;tag&#95;mm</a>(id&#95;tag) </td>
 	</tr>
 <tr><th colspan='3'>Options</th></tr>
 <tr><td colspan='3'>ENGINE&#61;InnoDB AUTO&#95;INCREMENT&#61;9 DEFAULT CHARSET&#61;utf8mb4 COLLATE&#61;utf8mb4&#95;unicode&#95;ci</td></tr>
 </tbody>
 </table></div></div>
 
-<br><br>
-<div class='card'><div class='card-body'><a name='syradev_blog.user'  onclick="window.scrollTo(60, 64);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.user').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table user</h5></a>
+<br /><br />
+<div class='card'><div class='card-body'><a name='syradev_blog.user'  onclick="window.scrollTo(60, 64);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.user').classList.add('palpable'); return false;" style='cursor:pointer;'><h5 class='card-title'>Table user</h5></a>
 <table class='table table-sm small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:40%'>Field Name</th><th>Data Type</th></tr>
@@ -355,7 +355,7 @@ a {
 <tr><th colspan='3'>Referring Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#ref'/></svg></td><td>post_ibfk_2</td>
-		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');}; document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;">post</a>(author) </td>
+		<td > (id) &#8592; <a href='#syradev&#95;blog&#46;post'  onclick="window.scrollTo(168, 48);var nodes = document.getElementsByClassName('palpable');for (var i = 0; i < nodes.length; i++) { nodes[i].classList.remove('palpable');} document.getElementById('depict_syradev_blog.post').classList.add('palpable'); return false;">post</a>(author) </td>
 	</tr>
 <tr><th colspan='3'>Options</th></tr>
 <tr><td colspan='3'>ENGINE&#61;InnoDB AUTO&#95;INCREMENT&#61;3 DEFAULT CHARSET&#61;utf8mb4 COLLATE&#61;utf8mb4&#95;unicode&#95;ci</td></tr>
@@ -363,4 +363,4 @@ a {
 </table></div></div>
 
 </div>
-<br><br></body></html>
+<br /><br /></body></html>

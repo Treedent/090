@@ -19,7 +19,8 @@ class Outils {
     }
 
     /* Fonction qui s'assure qu'un appel de page PHP est bien effectué en AJAX */
-    static public function ajaxCheck() {
+    static public function ajaxCheck(): bool
+    {
         $check=false;
         $requestedWith = $_SERVER['HTTP_X_REQUESTED_WITH'];
 
@@ -30,7 +31,8 @@ class Outils {
     }
 
     /* Fonction qui s'assure qu'un appel de page PHP est bien effectué depuis le nom de domaine référencé */
-    static public function domainCheck() {
+    static public function domainCheck(): bool
+    {
         global $domain;
         $check=false;
         $referer = substr($_SERVER['HTTP_REFERER'],0,strlen($domain));

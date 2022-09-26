@@ -7,7 +7,7 @@ use PDO, PDOException;
 class PdoDb {
 
     private static $connect = null;
-    private $conx;
+    private PDO $conx;
 
     private function __construct() {
 
@@ -22,7 +22,7 @@ class PdoDb {
         }
     }
 
-    public static function getInstance()
+    public static function getInstance(): ?PdoDb
     {
         if (is_null(self::$connect)) {
             self::$connect = new PdoDb();
@@ -41,7 +41,8 @@ class PdoDb {
     }
 
     // Insert des données dans une table
-    public function inserer($table, $data) {
+    public function inserer($table, $data): bool
+    {
         // On convertit l'objet en tableau
         $dataTab = get_object_vars($data);
         // On récupère les nom de champs dans les clés du tableau
@@ -66,20 +67,12 @@ class PdoDb {
 
         // On injecte dans la requête les données avec leur type.
         for($i=0;$i<$values_count;$i++) {
-            switch(gettype($values[$i])) {
-                case 'NULL':
-                    $type = PDO::PARAM_NULL;
-                    break;
-                case 'integer':
-                    $type = PDO::PARAM_INT;
-                    break;
-                case 'boolean':
-                    $type = PDO::PARAM_BOOL;
-                    break;
-                default:
-                    $type = PDO::PARAM_STR;
-                    break;
-            }
+            $type = match (gettype($values[$i])) {
+                'NULL' => PDO::PARAM_NULL,
+                'integer' => PDO::PARAM_INT,
+                'boolean' => PDO::PARAM_BOOL,
+                default => PDO::PARAM_STR,
+            };
             // On lie une valeur au paramètre :pX
             $prepared->bindParam(':p'.$i, $values[$i], $type);
         }
@@ -95,12 +88,8 @@ class PdoDb {
     }
 
     // Retourne l'id de la dernière insertion par auto-incrément dans la base de données
-    public function dernierIndex()
+    public function dernierIndex(): string
     {
         return $this->conx->lastInsertId();
-    }
-
-    public function __destruct() {
-        $this->conx = null;
     }
 }
