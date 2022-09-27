@@ -6,14 +6,17 @@ $dark: #015293;
 .navbar {
 	padding: 0 !important;
 }
+
 .navbar-top {
 	border-radius: calc(.375rem - 1px) calc(.375rem - 1px) 0 0;
 	margin-top: 10px;
 }
+
 .navbar-bottom {
 	border-radius: 0 0 calc(.375rem - 1px) calc(.375rem - 1px);
 	margin-bottom: 10px;
 }
+
 .bb-1 {
 	border: 1px solid $dark
 }

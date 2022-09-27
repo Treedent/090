@@ -41,6 +41,44 @@
                 <a href="<?= $_SESSION['default_url']; ?>?blogid=<?= $_SESSION['blogid']; ?>" class="btn btn-sm btn-primary">Annuler</a>
             </div>
         </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col-8">
+                <form action="newblog.php" method="post" autocomplete="off">
+                    <div class="form-group has-validation mb-3">
+                        <label class="form-label" for="title">Titre <?= $mandatory; ?>:</label>
+                        <?php
+                        $titleValidationClass = '';
+                        if(isset($FormErr) && in_array('title', $FormErr)) {
+                            $titleValidationClass = ' is-invalid';
+                        }
+                        ?>
+                        <input class="form-control<?= $titleValidationClass;?>" id="title" name="title" value="<?= $title; ?>"
+                               placeholder="Veuillez saisir ici le titre de l'article...">
+                        <div class="invalid-feedback">Veuillez saisir le titre de l'article !</div>
+                        <input type="hidden" value="<?= $_SESSION['blogid']; ?>" name="blogid">
+                        <input type="hidden" value="1" name="author">
+                    </div>
+                    <div class="form-group has-validation mb-3">
+                        <label class="form-label" for="content">Contenu de l'article <?= $mandatory; ?>:</label>
+                        <?php
+                        $contentValidationClass = '';
+                        if(isset($FormErr) && in_array('content', $FormErr)) {
+                            $contentValidationClass = ' is-invalid';
+                        }
+                        ?>
+                        <textarea rows="10" class="form-control<?= $contentValidationClass;?>" id="content" name="content"
+                                  placeholder="Veuillez saisir ici le contenu de l'article..."><?= $content; ?></textarea>
+                        <div class="invalid-feedback">Veuillez saisir le contenu de l'article !</div>
+                    </div>
+                    <div class="form-group d-none">
+                        <label class="form-label" for="escobar"></label>
+                        <input name="escobar" id="escobar" value="">
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </div>
     <?php require_once 'footer.php'; ?>
     <script src="js/bootstrap.bundle.min.js"></script>

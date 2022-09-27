@@ -4,7 +4,8 @@
 $conf = [
     'defaults' => [
 	    'home_url' => '/090/public/',
-	    'blog' => 1
+	    'blog' => 1,
+        'mandatory' => ' (<span class="text-danger">*</span>) '
     ],
     'db' => [
         'host'		=> 'localhost',

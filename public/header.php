@@ -2,9 +2,6 @@
 require_once '../App/Utils/Database/Database.php';
 require_once '../config/app.php';
 
-global $conf;
-
-
 use SYRADEV\Utils\Database\PdoDb;
 
 // On se connecte à la base de données
@@ -52,6 +49,7 @@ foreach ($res_blog as $blog) {
                                         $blogs .= '<li><a class="dropdown-item" href="'. $_SESSION['default_url'] .'?blogid='.$blog['id'].'">' . $blog['title'] . '</a></li>';
                                     }
                                     $blogs .= '<li><a class="dropdown-item" href="newblog.php">Créer un nouveau blog</a></li>';
+                                    $blogs .= '<li><a class="dropdown-item" href="Schema.html" target="_blank">Voir le Schéma de la BDD</a></li>';
                                     echo $blogs;
                                     ?>
                                 </ul>

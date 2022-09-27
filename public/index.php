@@ -9,10 +9,7 @@
 </head>
 <body>
     <?php
-    require_once 'header.php'
-    //if(isset)
-
-
+    require_once 'header.php';
     ?>
     <div class="container bb-1">
         <div class="row mt-3">
@@ -24,10 +21,20 @@
                 ?>
                 <?= $current_blog_logo;?>
                 <h1 class="d-inline-flex">
-                    Blog <?= $current_blog_title . ' : ' . $res_post['nbposts'] . $article_label ?>
+                    Blog <?= /** @var string $current_blog_title */
+                    $current_blog_title . ' : ' . $res_post['nbposts'] . $article_label ?>
                 </h1>
                 <a href="newpost.php?blogid=<?= $_SESSION['blogid']; ?>" class="btn btn-sm btn-primary">Nouveau post</a>
-
+                <?php
+                    if(isset( $_GET['postinsert']) && !empty($_GET['postinsert'])) {
+                ?>
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>L'article</strong> numéro <?= $_GET['postinsert']; ?> a bien été créé.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                <?php
+                    }
+                ?>
             </div>
         </div>
         <div class="row mt-3">
@@ -35,13 +42,14 @@
                 <?php
                 $req_posts = 'SELECT p.id,p.title AS postitle, FROM_UNIXTIME(p.date_post, GET_FORMAT(DATE,"EUR")) as datePost, u.firstname, u.lastname  FROM `post` p
                     INNER JOIN `user` u ON p.author = u.id
-                    WHERE `blog_id`=' . $_SESSION['blogid'];
+                    WHERE `blog_id`=' . $_SESSION['blogid'] .'
+                    ORDER BY p.date_post desc';
                 $res_posts = $conx->requete($req_posts);
                 $content = '';
                 foreach($res_posts as $post) {
                     $content .= '<div class="card mb-3">';
                     $content .= '<div class="card-body">';
-                    $content .= '<h5 class="card-title">' . $post['postitle'] . '</h5>';
+                    $content .= '<h5 class="card-title"><small>' . $post['id'] . '.</small> ' . $post['postitle'] . '</h5>';
                     $content .= '<p class="card-text">' . $post['datePost'] . '</p>';
 
                     // Sélection des tags du post
@@ -63,6 +71,11 @@
     </div>
     <?php include 'footer.php' ?>
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        setTimeout(function() {
+            bootstrap.Alert.getOrCreateInstance(document.querySelector(".alert")).close();
+        }, 3000)
+    </script>
 </body>
 </html>
 

@@ -685,37 +685,6 @@
   </defs>
   <!-- == Shape Colors == -->
   <!-- == Desktop == -->
-  <!-- == Legend == -->
-  <g
-     transform="translate(22.054942,4.6255637)"
-     id="g249">
-    <rect
-       x="10"
-       y="10"
-       width="465.8447"
-       height="70"
-       rx="6"
-       ry="6"
-       style="fill:url(#legendGradient);filter:url(#shadow)"
-       id="rect231" />
-    <text
-       x="20"
-       y="25"
-       class="legendTitle"
-       id="text233">Syradev_Blog</text>
-    <text
-       x="20"
-       y="53"
-       class="legendSubTitle"
-       id="text243"><tspan
-         id="tspan241">Read the schema comments as mouse-over tooltips.</tspan></text>
-    <text
-       x="20"
-       y="67"
-       class="legendSubTitle"
-       id="text247"><tspan
-         id="tspan245">Zoom using CTRL + mouse wheel, pan by dragging with the right-mouse button.</tspan></text>
-  </g>
   <g
      transform="translate(0,110)"
      id="g690">
